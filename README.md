@@ -22,27 +22,49 @@ The Sample App is provided to show the usage of the Hue SDK. It uses the Wizards
 How to structure your app for the Hue SDK
 ---------------------------------------------------------
 These are the key things you need to consider when building your app for the Hue SDK.
+
 ###The bridge controls the lights
 The hardware bridge that you connect to your Wi-Fi network controls the connected lights. This means that all communication with the lights goes via the bridge
+
+
 ###The SDK connects to a bridge
 To operate, the SDK must connect to a bridge
+
+
 ###Find a bridge
 The SDK has functionality to find local bridges and a Wizard UI component for the user to select the bridge to use
+
+
 ###Push Linking
 The button on the bridge itself must be pressed to connect to the SDK.  The SDK provides the code and Wizard UI component for this.
+
+
 ###Find the lights
 The bridge should be instructed to find any unallocated lights in the locality. It will search using Zigbee to find them
+
+
 ###Identifiers for lights
 The found lights are given unique identifiers by the bridge. These identifiers can be used to reference specific lights in SDK method calls
+
+
 ###The Bridge Send API sends commands to the lights 
 This API allows the app to command the bridge to set light states (colours etc), group commands to lights, set schedules for light events etc.
+
+
 ###The heartbeat gets the state of the bridge and light settings
 The Heartbeat runs at regular intervals in the SDK and each interval the latest state of the lights, configuration etc, is collected from the bridge and stored in the Bridge Resources cache.
+
+
 ###Use the Bridge Resources Cache to read the state of the lights etc.
 The Bridge keeps itself in sync with the lights and the Bridge Resources Cache is a copy of the last read setting.
+
 The app should read the Bridge Resources Cache objects to get the latest settings for lights, schedules etc.
+
+
 ###Notifications
 iOS Notifications are used by the SDK. The App can receive notifications as events occur
+
+
 The 1-2-3 Quick Start for your SDK app
 -----------------------------------------------------
 1. Connect the SDK to the Bridge and Find Lights
